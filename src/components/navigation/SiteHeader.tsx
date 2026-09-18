@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { site } from '../../data/site'
 
 const navigationItems = [
-  { label: 'Work', to: '/work', activePaths: ['/work', '/work/logbot', '/work/fontsheriff'] },
+  { label: 'Projects', to: '/projects', activePaths: ['/projects', '/projects/deeptrace', '/projects/fontsheriff', '/projects/interactive-faculty-kiosk'] },
   { label: 'Experience', to: '/experience', activePaths: ['/experience'] },
   { label: 'About', to: '/about', activePaths: ['/about'] },
   { label: 'Contact', to: '/contact', activePaths: ['/contact'] },

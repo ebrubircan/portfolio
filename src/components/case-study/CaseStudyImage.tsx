@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import type { AssetReference } from '../../types/content'
 
-type ProjectImageProps = {
+type CaseStudyImageProps = {
   visual: AssetReference
-  className?: string
 }
 
-export function ProjectImage({ visual, className = '' }: ProjectImageProps) {
+export function CaseStudyImage({ visual }: CaseStudyImageProps) {
   const [isOpen, setIsOpen] = useState(false)
   const triggerRef = useRef<HTMLButtonElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
@@ -33,14 +32,14 @@ export function ProjectImage({ visual, className = '' }: ProjectImageProps) {
 
   return (
     <>
-      <button aria-label={`View larger image: ${visual.alt}`} className={`project-image project-image--${visual.previewFit ?? 'contain'} ${className}`} onClick={() => setIsOpen(true)} ref={triggerRef} type="button">
+      <button aria-label={`View larger image: ${visual.alt}`} className={`case-study-image case-study-image--${visual.previewFit ?? 'cover'}`} onClick={() => setIsOpen(true)} ref={triggerRef} type="button">
         <img alt={visual.alt} src={visual.src} style={{ objectPosition: visual.previewPosition }} />
       </button>
 
       {isOpen ? (
-        <div aria-modal="true" className="image-lightbox" onMouseDown={(event) => { if (event.target === event.currentTarget) setIsOpen(false) }} role="dialog">
-          <button aria-label="Close image" className="image-lightbox__close" onClick={() => setIsOpen(false)} ref={closeButtonRef} type="button">Close <span aria-hidden="true">×</span></button>
-          <img alt={visual.alt} className="image-lightbox__image" src={visual.src} />
+        <div aria-label="Expanded project image" aria-modal="true" className="case-study-lightbox" onMouseDown={(event) => { if (event.target === event.currentTarget) setIsOpen(false) }} role="dialog">
+          <button aria-label="Close image" className="case-study-lightbox__close" onClick={() => setIsOpen(false)} ref={closeButtonRef} type="button">Close <span aria-hidden="true">×</span></button>
+          <img alt={visual.alt} className="case-study-lightbox__image" src={visual.src} />
         </div>
       ) : null}
     </>

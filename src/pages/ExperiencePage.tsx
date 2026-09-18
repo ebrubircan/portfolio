@@ -1,9 +1,33 @@
+import { Link } from 'react-router-dom'
+import { experiences, startupExperience } from '../data/experiences'
+
 export function ExperiencePage() {
   return (
-    <section className="page-container editorial-page" aria-labelledby="experience-title">
-      <p className="editorial-page__label">Experience</p>
-      <h1 id="experience-title">Where I’ve worked and what I’ve built.</h1>
-      <p>Experience list will be added in the next content stage.</p>
-    </section>
+    <main className="page-container experience-page" aria-labelledby="experience-title">
+      <header className="experience-page__header">
+        <h1 id="experience-title" className="experience-page__title">Experience</h1>
+      </header>
+      <div className="experience-page__list">
+        {experiences.map((experience, index) => <article className="experience-entry" key={experience.company}>
+          <p aria-hidden="true" className="experience-entry__number">{String(index + 1).padStart(2, '0')}</p>
+          <div className="experience-entry__identity">
+            <h2>{experience.company}</h2>
+            <p className="experience-entry__role">{experience.role}</p>
+            <div className="experience-entry__metadata"><p>{experience.period}</p><p>{experience.location}</p></div>
+          </div>
+          <div className="experience-entry__content">
+            <div className="experience-entry__blocks">{experience.contentBlocks.map((block) => <section key={block.label}><h3>{block.label}</h3><p>{block.description}</p></section>)}</div>
+            {experience.highlights?.length ? <aside className="experience-entry__highlights" aria-label={`${experience.company} selected work`}>
+              <p className="experience-entry__highlights-label">Selected work</p>
+              <div>{experience.highlights.map((highlight) => <section key={highlight.title}><h3>{highlight.title}</h3><p>{highlight.description}</p><Link to={highlight.href}>{highlight.linkLabel}</Link></section>)}</div>
+            </aside> : null}
+          </div>
+        </article>)}
+      </div>
+      <section className="startup-experience" aria-labelledby="startup-experience-title">
+        <div><p className="editorial-page__label">{startupExperience.label}</p><h2 id="startup-experience-title">{startupExperience.company}</h2></div>
+        <div><p>{startupExperience.description}</p>{startupExperience.href && startupExperience.linkLabel ? <a href={startupExperience.href} rel="noreferrer" target="_blank">{startupExperience.linkLabel}</a> : null}</div>
+      </section>
+    </main>
   )
 }
