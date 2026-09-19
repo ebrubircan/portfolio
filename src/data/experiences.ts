@@ -1,4 +1,5 @@
 import type { Experience, StartupExperience } from '../types/content'
+import phoyerTeam from '../assets/images/phoyer-unlu-co-team.jpg'
 
 export const experiences: Experience[] = [
   {
@@ -23,10 +24,11 @@ export const experiences: Experience[] = [
     period: '07/2024 — 12/2024',
     location: 'Istanbul, Turkey',
     contentBlocks: [
-      { label: 'Production frontend', description: 'Selected as one of the top three applicants from more than 4,500, I contributed to more than 50 production-ready React features and interfaces connected to real-time betting data.' },
+      { label: 'Production frontend', description: 'Selected as one of the top three applicants from more than 4,500, I worked on frontend features across both the İddaa sports betting and horse racing products, contributing to more than 50 production-ready React features and real-time data interfaces.' },
       { label: 'Interface quality', description: 'The work focused on responsive UI components that remained clear under changing data, while addressing performance optimization, SEO and accessibility in the frontend.' },
       { label: 'Product collaboration', description: 'I worked in an Agile environment with design and product collaborators, using Figma as part of the delivery process. I also introduced unit tests for components that had previously been untested.' },
     ],
+    certificateLink: { label: 'View certificate', href: '/certifications#nesine' },
   },
   {
     company: 'Arteria Ventures — Faladdin',
@@ -44,7 +46,8 @@ export const experiences: Experience[] = [
 export const startupExperience: StartupExperience = {
   label: 'Startup experience',
   company: 'Phoyer',
-  description: 'An early-stage startup experience where I worked as part of a team and participated in the ÜNLÜ & Co Women Technology Entrepreneurs Academy. The team reached the finalist stage.',
+  description: 'Worked as a Web Developer on Phoyer, a curated content platform connecting subscribers with videos, services and products from professional content creators. The product also explored artist tools such as file management, opportunity pools and funding access, alongside personalized content experiences. I contributed to the web product in an early-stage startup environment and participated in ÜNLÜ & Co’s Women Technology Entrepreneurs Academy as part of the Phoyer team, one of five finalist teams.',
   href: 'https://www.unluco.com/basin-odasi/basin-bultenleri/unlu-co-kadin-teknoloji-girisimcileri-akademisi-ilk-mezunlarini-verdi/',
   linkLabel: 'View program →',
+  visual: { src: phoyerTeam, alt: 'Phoyer team at the ÜNLÜ & Co Women Technology Entrepreneurs Academy', caption: 'Phoyer / ÜNLÜ & Co Women Technology Entrepreneurs Academy', previewFit: 'cover', previewPosition: 'center' },
 }

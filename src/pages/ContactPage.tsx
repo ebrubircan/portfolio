@@ -33,7 +33,7 @@ export function ContactPage() {
       </section>
 
       {site.peopleWorkedWith?.length ? <section className="contact-page__people" aria-labelledby="people-worked-with-title">
-        <h2 id="people-worked-with-title">People I&apos;ve worked with</h2>
+        <h2 id="people-worked-with-title">References</h2>
         <div>{site.peopleWorkedWith.map((person) => <article key={person.href}><h3>{person.name}</h3><p>{person.title}</p><a href={person.href} rel="noreferrer" target="_blank"><LinkedInIcon />LinkedIn <span aria-hidden="true">→</span></a></article>)}</div>
       </section> : null}
     </main>

@@ -5,6 +5,7 @@ import { site } from '../../data/site'
 const navigationItems = [
   { label: 'Projects', to: '/projects', activePaths: ['/projects', '/projects/deeptrace', '/projects/fontsheriff', '/projects/interactive-faculty-kiosk'] },
   { label: 'Experience', to: '/experience', activePaths: ['/experience'] },
+  { label: 'Certifications', to: '/certifications', activePaths: ['/certifications'] },
   { label: 'About', to: '/about', activePaths: ['/about'] },
   { label: 'Contact', to: '/contact', activePaths: ['/contact'] },
 ]

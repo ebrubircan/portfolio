@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { AppShell } from '../layouts/AppShell'
 import { AboutPage } from '../pages/AboutPage'
 import { CaseStudyPage } from '../pages/CaseStudyPage'
+import { CertificationsPage } from '../pages/CertificationsPage'
 import { ContactPage } from '../pages/ContactPage'
 import { ExperiencePage } from '../pages/ExperiencePage'
 import { HomePage } from '../pages/HomePage'
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([{ element: <AppShell />, children: [
   { path: 'work/fontsheriff', element: <Navigate replace to="/projects/fontsheriff" /> },
   { path: 'work/kiosk', element: <Navigate replace to="/projects/interactive-faculty-kiosk" /> },
   { path: 'experience', element: <ExperiencePage /> },
+  { path: 'certifications', element: <CertificationsPage /> },
   { path: 'about', element: <AboutPage /> },
   { path: 'contact', element: <ContactPage /> },
   { path: '*', element: <NotFoundPage /> },

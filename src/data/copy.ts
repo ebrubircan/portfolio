@@ -2,15 +2,8 @@ export const caseStudyCopy = {
   notFound: 'Project not found',
   sections: {
     overview: 'Overview',
-    problem: 'Problem',
-    goal: 'Goal',
-    approach: 'Approach',
-    kioskFeatures: 'What the kiosk provides',
-    kioskStory: 'From idea to physical product',
+    features: 'Key features',
     contributions: 'What I worked on',
-    solution: 'Solution',
-    challenges: 'Challenges',
-    outcome: 'Outcome / Impact',
-    technicalDepth: 'Technical depth',
+    outcome: 'Outcome / What I learned',
   },
 } as const
